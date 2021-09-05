@@ -1,6 +1,7 @@
 package com.webserver.core;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -34,9 +35,12 @@ public class WebServer {
     }
     public void start(){
         try {
-            System.out.println("等待客户端连接");
-            Socket socket = serverSocket.accept();
-            System.out.println("一个客户端已连接！");
+//            while(true){
+                System.out.println("等待客户端连接");
+                Socket socket = serverSocket.accept();
+                System.out.println("一个客户端已连接！");
+                new Thread(new ClientHandler(socket)).start();
+//            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,5 +51,4 @@ public class WebServer {
         WebServer webServer = new WebServer();
         webServer.start();
     }
-
 }
