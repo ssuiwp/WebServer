@@ -27,7 +27,6 @@ public class HttpRequest {
     private Map<String,String> headers = new HashMap<>();
 //    消息正文相关信息
 
-
 //    连接相关属性
     //对应客户端的socket
     private Socket socket;
@@ -64,6 +63,7 @@ public class HttpRequest {
             System.out.println("method:"+method);
             System.out.println("uri:"+uri);
             System.out.println("protocol:"+protocol);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

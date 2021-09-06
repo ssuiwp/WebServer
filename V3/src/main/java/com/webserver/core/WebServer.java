@@ -35,13 +35,10 @@ public class WebServer {
     }
     public void start(){
         try {
-            while(true){
                 System.out.println("等待客户端连接");
                 Socket socket = serverSocket.accept();
                 System.out.println("一个客户端已连接！");
                 new Thread(new ClientHandler(socket)).start();
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }

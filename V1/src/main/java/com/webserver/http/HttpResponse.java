@@ -56,7 +56,7 @@ public class HttpResponse {
         try{
             System.out.println("HttpResponse:开始发送状态行");
             String line = "HTTP/1.1 "+statusCode+" "+statusReason;
-            System.out.println("状态行：+line");
+            System.out.println("状态行："+line);
             out.write(line.getBytes("ISO8859-1"));
             out.write(13);
             out.write(10);
