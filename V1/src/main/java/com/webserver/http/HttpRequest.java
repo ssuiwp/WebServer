@@ -52,9 +52,8 @@ public class HttpRequest {
     }
     private void parseRequestLine(){
         System.out.println("开始解析请求行");
-        String line = null;
         try {
-            line = readLine();
+            String line = readLine();
             System.out.println("请求行"+line);
             String[] data = line.split("\\s");//\s是正则表达式中所有的空白字符
             method =  data[0];
@@ -76,7 +75,7 @@ public class HttpRequest {
                 String line = readLine();
                 if("".equals(line))break;
                 System.out.println("消息头："+line);
-                String[] data = line.split("\\s");
+                String[] data = line.split(":\\s");
                 headers.put(data[0],data[1]);
             }
             System.out.println("所有的消息头："+headers);

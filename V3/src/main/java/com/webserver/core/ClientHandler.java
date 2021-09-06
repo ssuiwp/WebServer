@@ -53,9 +53,14 @@ public class ClientHandler implements Runnable {
             System.out.println("protocol:" + protocol);
 
             // 解析消息头
-            line = readLine();
-            System.out.println("消息头: "+line);
-
+            //key存放名字，value存放消息头对应的值
+            Map<String,String> headers = new HashMap<>();
+            while(!(line = readLine()).isEmpty()){
+                System.out.println("消息头: " + line);
+                data = line.split(":\\s");
+                headers.put(data[0],data[1]);
+            }
+            System.out.println(headers);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
