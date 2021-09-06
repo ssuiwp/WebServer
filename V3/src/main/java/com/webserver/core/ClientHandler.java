@@ -7,7 +7,6 @@ import com.webserver.http.HttpResponse;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
