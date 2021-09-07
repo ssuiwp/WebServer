@@ -31,10 +31,19 @@ public class ClientHandler implements Runnable {
                 1011101010101010101......
              */
             //获取文件
-            File file = new File("./webapps/myweb/index.html");
-            //发送响应头：
-            String line = "HTTP/1.1 200 OK";
+            String path = request.getUri();
+            if("/".equals(path)) {
+                path = "/index.html";
+            }
+            File file = new File("./webapps"+path);
             OutputStream out = socket.getOutputStream();
+            String line;
+            if(!file.exists()){
+                file = new File("./webapps/root/404.html");
+                line = "HTTP/1.1 404 Not Found";
+            }else {
+                line = "HTTP/1.1 200 OK";
+            }
             out.write(line.getBytes("ISO8859-1"));
             out.write(13);
             out.write(10);

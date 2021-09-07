@@ -6,8 +6,7 @@
 </head>
 <body>
 <center>
-<!--
-    <center>:居中显示，凡是在该标签内的内容都会在页面上居中显示，该标签在html5️⃣的标准后就不再建议使用了
+    <!--<center>:居中显示，凡是在该标签内的内容都会在页面上居中显示，该标签在html5️⃣的标准后就不再建议使用了
     <h>：标题，分别对应h1-h6，标题独立占一行
     <input> : 输入组件，用于获取用户输入，该组件具体体现为什么样子，
                 取决于type属性的值，常见的有：
@@ -20,9 +19,12 @@
 				<br/>换行
 				<a href="https://www.taobao.com">淘宝</a>   
 					超链接，标签中间的文本是超链接上提示的字符，href属性用于指定点击超链接后的请求路径
-					该路径可以用绝对路径或相对路径，绝对路径通常请求其他网站，相对路径通常请求本网站的其他资源。
-				
--->
+					该路径可以用绝对路径或相对路径，绝对路径通常请求其他网站，相对路径通常请求本网站的其他资源。-->
+				<!--<table>:表格，table标签下可以包含<tr>
+							<tr>:行，下面可以包含<td>
+							<td>:列
+							即：table包含tr用来指定表格中有多少行，
+							tr中包含td，用来指定一行中有多少列-->
 <h1>百度</h1>
 <!--<h2>我是标题</h2>
 <h3>我是标题</h3>
@@ -30,21 +32,34 @@
 <h5>我是标题</h5>
 <h6>我是标题</h6>-->
     <input type="text" size="32">
-    <button onclick="">提交</button>
-	<br/>
+<!--    <button onclick="">提交</button>-->
+<!--	<br/>-->
 	<input type="button" value = "百度一下" onclick = "alert('点你妹啊！')">
+	<br/>
 	<a href = "https://www.taobao.com">去淘宝</a>
 	<br/>
-	<table border="1" bgcolor = "#8b0000">
+	<table border="1" bgcolor = "yellow">
 		<tr>
 			<td>第一列</td>
+			<td align="center" colspan="2">第二列</td>
+<!--			<td>第三列</td>-->
+<!--			align：设置居中之类的样式，colspan，设置表格可以跨越的列数-->
+		</tr>
+		<tr align="center" >
+			<td rowspan="2">第一列</td>
+<!--			rowspan可以设置表格横跨的行数
+				column纵列，，row行，排   rows一行，一排
+				-->
 			<td>第二列</td>
+			<td>第三列</td>
 		</tr>
 		<tr>
-			<td>第一列</td>
+<!--			<td>第一列</td>-->
 			<td>第二列</td>
+			<td>第三列</td>
 		</tr>
-		
+		<br/>
+		<a href="classTable.html">课程表</a>
 	</table>
 </center>
 </body>
