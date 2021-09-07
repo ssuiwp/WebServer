@@ -1,0 +1,10 @@
+重构代码
+对ClientHandler进行功能拆分，将解析请求的细节工作才拆分出去，是的ClinetHandler进负责Http交互的流程控制
+
+设计请求对象HttpRequest，是的这个类表示一个Http的请求内容，解析请求用的细节移动到这个类的构造方法中，实例化一个对象，就可以表示客户端发送过来的一个请求内容
+
+实现
+1：新建包：com.webserver.http
+2：在http包下新建类：HttpRequest，并定义对应的属性（用于保存请求各项信息）
+3：定义构造方法：在实例化独享的同事完成请求解析并初始化对应的属性
+4：ClientHandler第一步解析请求改为实例化HttpRequest来完成。

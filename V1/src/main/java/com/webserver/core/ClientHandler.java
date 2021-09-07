@@ -29,6 +29,7 @@ public class ClientHandler implements Runnable {
             //2处理请求
             //2.1通过request获取请求路径
             String path = request.getUri();
+            if(path.equals("/"))path = "/index.html";
             System.out.println("该抽象路径为："+path);
             //2.2通过该路径去查询文件
             File file = new File("./webapps"+path);
@@ -71,6 +72,5 @@ public class ClientHandler implements Runnable {
                 e.printStackTrace();
             }
         }
-
     }
 }
