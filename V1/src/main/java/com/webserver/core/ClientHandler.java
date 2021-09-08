@@ -34,7 +34,7 @@ public class ClientHandler implements Runnable {
             //2.2通过该路径去查询文件
             File file = new File("./webapps"+path);
             //2.3判断文件是否存在
-            if(file.exists()){
+            if(file.exists()&&file.isFile()){
                 System.out.println("该资源已找到");
                 response.setEntity(file);
                 Map<String,String> map = new HashMap<>();

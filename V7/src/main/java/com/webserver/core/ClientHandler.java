@@ -38,7 +38,7 @@ public class ClientHandler implements Runnable {
             File file = new File("./webapps"+path);
             OutputStream out = socket.getOutputStream();
             String line;
-            if(!file.exists()){
+            if(!(file.exists()&&file.isFile())){
                 file = new File("./webapps/root/404.html");
                 line = "HTTP/1.1 404 Not Found";
             }else {
