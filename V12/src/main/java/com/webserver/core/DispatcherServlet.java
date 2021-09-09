@@ -28,11 +28,6 @@ public class DispatcherServlet {
             response.setStatusCode(200);
             response.setStatusReason("OK");
         }
-        //后缀名
-//        String ext = type.get(file.getName().split("\\.")[file.getName().split("\\.").length-1]);
-
-        response.addHeader("Content-Type", HttpContext.getMimeType(file));
-        response.addHeader("Content-Length",file.length()+"");
         response.addHeader("Server","WebServer");
         response.setEntity(file);
     }

@@ -76,7 +76,7 @@ public class HttpResponse {
          Server         webServer
          */
         for (Map.Entry<String, String> e : headers.entrySet()) {
-            String line = e.getKey()+": "+e.getValue();
+            String line = e.getKey() + ": " + e.getValue();
             println(line);
         }
         //单独发送CRLF表示响应头发送结束
@@ -125,8 +125,14 @@ public class HttpResponse {
 
     public void setEntity(File entity) {
         this.entity = entity;
+        //后缀名
+//        String ext = file.getName().split("\\.")[file.getName().split("\\.").length-1];
+        String ext = entity.getName().substring(entity.getName().lastIndexOf(".") + 1);//最后的点
+        addHeader("Content-Type", HttpContext.getMimeType(ext));
+        addHeader("Content-Length", entity.length() + "");
     }
-    public void addHeader(String name,String value){
-        this.headers.put(name,value);
+
+    public void addHeader(String name, String value) {
+        this.headers.put(name, value);
     }
 }

@@ -10,6 +10,7 @@
         <module name="V7" />
         <module name="V8" />
         <module name="V9" />
+        <module name="ParseXmlDemo" />
         <module name="V10" />
         <module name="V12" />
         <module name="V11" />
