@@ -94,7 +94,7 @@ public class HttpResponse {
         try (FileInputStream fis = new FileInputStream(entity)){
             System.out.println("HttpResponse：开始发送响应正文");
             byte[] bytes = new byte[1024*10];
-            int len = -1;
+            int len;
             while((len = fis.read(bytes))!=-1){
                 out.write(bytes,0,len);
             }
