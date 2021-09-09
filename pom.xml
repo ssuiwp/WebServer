@@ -19,6 +19,7 @@
         <module>V11</module>
         <module>V12</module>
         <module>ParseXmlDemo</module>
+        <module>V13</module>
     </modules>
     <properties>
         <!-- 设置 JDK 版本为 1.8 -->

@@ -32,12 +32,19 @@ public class ParseXmlDemo {
 //            reader.read(new File("./emplist.xml"));
 //            reader.read(new FileInputStream(new File("emplist.xml")));
             //3
+            //document的方法:
             /*
                 Document对象提供了获取根元素的方法:
                 Element getRootElement()
 
                 Element的每一个实例用于表示XML文档上的一个元素(一对标签)
                 其提供了获取XML元素信息的相关方法,常用的有:
+                    Attribute attribute("xxx");
+                    获取该元素的属性:
+                        属性有方法:
+                            String getName();String getValue();
+                            获取属性名;                获取value
+
                     String getName()
                     获取元素名(标签名)
 
@@ -68,6 +75,11 @@ public class ParseXmlDemo {
             for (Element deptEle : dept) {
                 List<Element> emp = deptEle.elements("emp");
                 for (Element empEle : emp) {
+                    //获取工号:
+                    //empEle.attributeValue("xxx");=
+                    //empEle.attribute("xxx").getValue();
+                    int id = Integer.parseInt(empEle.attributeValue("id"));
+                    System.out.print("id:"+id+" ");
                     //获取名字
                     Element nameEle = empEle.element("name");
                     String ename = nameEle.getText();
