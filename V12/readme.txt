@@ -1,0 +1,12 @@
+重构
+
+1:DispatcherServlet中处理请求是我们临时创建了一个map保存所有的资源后缀与对应的Content—type值,但是这样一来意味这每一次请求都要创建一个这个mao
+这是没有必要的
+把他定义成全局一份即可,每次用时从中获取值即可。
+
+实现:
+1:在com.webserver.http包下新建类HttpContext
+这个类用于定义所有的和HTTP协议有关的数据,以便当前程序所有类共同使用
+
+2:在HttpContext中定义一个静态属性,static map MimeMapping
+3:提供对应的getMineType方法,可以根据资源后缀提取对应的Context-Type的值
