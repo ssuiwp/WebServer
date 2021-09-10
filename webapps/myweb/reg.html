@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<center>
+    <h1>用户注册</h1>
+    <form action="./regUser" method="get">
+<!--       form表单 用于向服务端提交用户在页面上输入的信息
+            form有两个重要的属性:
+                method:用于指定表单的提交方式。有两种-->
+<!--                    get:表单数据会被拼接到URL的抽象路径部分提交
+                        Post: 表单数据会被包含在请求的消息正文中提交-->
+<!--                        如果表单中含有用户隐私信息比(比如密码)或包含附件上传时)&ndash;&gt;-->
+<!--                        应当使用POST请求-->
+<!--                method不指定时默认是get形式提交-->
+<!--            action:用于指定表单提交的路径,这个路径有我们自定义并且需要在服务端配合该请求路径来处理业务-->
+<!--        注: 只有被包含在form的输入域(指提供给用户填写的部分)中内容才会提交给服务端-->
+        <!--下面表单提交之后
+        http://192.168.28.50:8088
+        /myweb/regUser
+        ?username=fanchuanqi&password=123456&nickname=chuanqi&age=555-->
+
+        <table border="1">
+            <tr>
+                <td>用户名</td>
+                <td><input nmae="username" type="text"></td>
+                <!--表单内输入域必须起名才不会被忽略-->
+            </tr>
+            <tr>
+                <td>密 码</td>
+                <td><input name="password" type="password"></td>
+            </tr>
+            <tr>
+                <td>昵 称</td>
+                <td><input name="nickname" type="text"></td>
+            </tr>
+            <tr>
+                <td>年 龄</td>
+                <td><input name="age" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="注册"></td>
+                <!-- submit是专门用来提交表单数据的特殊按钮,包含了提交的事件 -->
+            </tr>
+        </table>
+    </form>
+</center>
+<!--<form action="./reg" method="get">-->
+<!--    <ur>-->
+<!--        <ul>-->
+<!--            <input type="text" ><br/>-->
+<!--            <input type="password">-->
+<!--            <input type="button" value="注册">-->
+<!--        </ul>-->
+<!--    </ur>-->
+<!--</form>-->
+
+
+</body>
+</html>

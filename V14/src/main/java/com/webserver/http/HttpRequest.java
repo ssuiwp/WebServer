@@ -37,7 +37,7 @@ public class HttpRequest {
     /**
      * 初始化HttpRequest，该过程就是解析请求的过程，实例化完毕后，该对象就表示当前客户端发送过来的请求内容
      */
-    public HttpRequest(Socket socket) throws IOException {
+    public HttpRequest(Socket socket) throws IOException, EmptyRequestException {
         this.socket = socket;
         try {
             in = socket.getInputStream();
@@ -49,7 +49,7 @@ public class HttpRequest {
         //1.2解析消息头
         parseHeaders();
         //1.3解析消息正文
-        parseContent();
+//        parseContent();
     }
 //    private void parseRequestLine(){    }
 //    private void parseHeaders(){}
@@ -58,11 +58,14 @@ public class HttpRequest {
     /**
      * 解析请求行
      */
-    private void parseRequestLine() throws IOException {
+    private void parseRequestLine() throws IOException, EmptyRequestException {
         //1.1解析请求行
-        System.out.println("开始解析请求行");
+//        System.out.println("开始解析请求行");
 
         String line = readLine();
+        if(line.isEmpty()){
+            throw new EmptyRequestException("浏览器发送了空请求");
+        }
         System.out.println("请求行" + line);
         String[] data = line.split("\\s");//\s是正则表达式中所有的空白字符
         method = data[0];
@@ -71,29 +74,31 @@ public class HttpRequest {
 /*
    fontawesome-webfont.woff2?v=4.7.0
  */
-        System.out.println("method:" + method);
-        System.out.println("uri:" + uri);
-        System.out.println("protocol:" + protocol);
+//        System.out.println("method:" + method);
+//        System.out.println("uri:" + uri);
+//        System.out.println("protocol:" + protocol);
 
-        System.out.println("解析请求行完毕");
+//        System.out.println("解析请求行完毕");
     }
 
     /**
      * 解析消息头
      */
     private void parseHeaders() throws IOException {
-        System.out.println("开始解析消息头");
+//        System.out.println("开始解析消息头");
         String line;
         String[] data;
         while (true) {
             line = readLine();
             if ("".equals(line)) break;
-            System.out.println("消息头：" + line);
+            if(line.startsWith("Referer")) {
+                System.out.println("消息头：" + line);
+            }
             data = line.split(":\\s");
             headers.put(data[0], data[1]);
         }
-            System.out.println("所有的消息头：" + headers);
-            System.out.println("解析消息头完毕");
+//            System.out.println("所有的消息头：" + headers);
+//            System.out.println("解析消息头完毕");
     }
 
     /**

@@ -20,58 +20,59 @@
 				<a href="https://www.taobao.com">淘宝</a>   
 					超链接，标签中间的文本是超链接上提示的字符，href属性用于指定点击超链接后的请求路径
 					该路径可以用绝对路径或相对路径，绝对路径通常请求其他网站，相对路径通常请求本网站的其他资源。-->
-				<!--<table>:表格，table标签下可以包含<tr>
-							<tr>:行，下面可以包含<td>
-							<td>:列
-							即：table包含tr用来指定表格中有多少行，
-							tr中包含td，用来指定一行中有多少列-->
-<!--<h1>百度</h1>-->
-<!--<h2>我是标题</h2>
-<h3>我是标题</h3>
-<h4>我是标题</h4>
-<h5>我是标题</h5>
-<h6>我是标题</h6>-->
-	<img src="./logo.png/">
-<!--	<img>: 图片
-			属性src用于指定图片的路径。
-			但我们在页面上加载某个资源时若使用了相对路径的"./"当前目录是浏览器实际理解该路径是基于请求时地址栏中当前页面所在目录而定的
-			例如:
-			请求当前index.html页面是浏览器地址栏输入的路径为:
-			http://localhost:8088/myweb/
-			所以如果页面图片上指定路径使用src="./logo.png"浏览器实际理解为
-			http://localhost:8088/myweb/logo.png
-			-->
-	<br>
+    <!--<table>:表格，table标签下可以包含<tr>
+                <tr>:行，下面可以包含<td>
+                <td>:列
+                即：table包含tr用来指定表格中有多少行，
+                tr中包含td，用来指定一行中有多少列-->
+    <!--<h1>百度</h1>-->
+    <!--<h2>我是标题</h2>
+    <h3>我是标题</h3>
+    <h4>我是标题</h4>
+    <h5>我是标题</h5>
+    <h6>我是标题</h6>-->
+    <img src="./logo.png/">
+    <!--	<img>: 图片
+                属性src用于指定图片的路径。
+                但我们在页面上加载某个资源时若使用了相对路径的"./"当前目录是浏览器实际理解该路径是基于请求时地址栏中当前页面所在目录而定的
+                例如:
+                请求当前index.html页面是浏览器地址栏输入的路径为:
+                http://localhost:8088/myweb/
+                所以如果页面图片上指定路径使用src="./logo.png"浏览器实际理解为
+                http://localhost:8088/myweb/logo.png
+                -->
+    <br>
     <input type="text" size="32">
-<!--    <button onclick="">提交</button>-->
-<!--	<br/>-->
-	<input type="button" value = "百度一下" onclick = "alert('点你妹啊！')">
-	<br/>
-	<a href = "https://www.taobao.com">去淘宝</a>
-	<br/>
-	<table border="1" bgcolor = "yellow">
-		<tr>
-			<td>第一列</td>
-			<td align="center" colspan="2">第二列</td>
-<!--			<td>第三列</td>-->
-<!--			align：设置居中之类的样式，colspan，设置表格可以跨越的列数-->
-		</tr>
-		<tr align="center" >
-			<td rowspan="2">第一列</td>
-<!--			rowspan可以设置表格横跨的行数
-				column纵列，，row行，排   rows一行，一排
-				-->
-			<td>第二列</td>
-			<td>第三列</td>
-		</tr>
-		<tr>
-<!--			<td>第一列</td>-->
-			<td>第二列</td>
-			<td>第三列</td>
-		</tr>
-		<br/>
-		<a href="classTable.html">课程表</a>
-	</table>
+    <!--    <button onclick="">提交</button>-->
+    <!--	<br/>-->
+    <input type="button" value="百度一下" onclick="alert('点你妹啊！')">
+    <br/>
+    <a href="https://www.taobao.com">去淘宝</a>
+    <a href="./reg.html">去注册</a>
+    <br/>
+    <table border="1" bgcolor="yellow">
+        <tr>
+            <td>第一列</td>
+            <td align="center" colspan="2">第二列</td>
+            <!--			<td>第三列</td>-->
+            <!--			align：设置居中之类的样式，colspan，设置表格可以跨越的列数-->
+        </tr>
+        <tr align="center">
+            <td rowspan="2">第一列</td>
+            <!--			rowspan可以设置表格横跨的行数
+                            column纵列，，row行，排   rows一行，一排
+                            -->
+            <td>第二列</td>
+            <td>第三列</td>
+        </tr>
+        <tr>
+            <!--			<td>第一列</td>-->
+            <td>第二列</td>
+            <td>第三列</td>
+        </tr>
+        <br/>
+        <a href="classTable.html">课程表</a>
+    </table>
 </center>
 </body>
 </html>

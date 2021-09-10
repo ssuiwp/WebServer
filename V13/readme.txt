@@ -7,7 +7,8 @@
     将原有的固定向mimeMapping中put六个元素的操作删除,改为解析XMl
 
     具体过程:
-    将web.xml跟标签下所有名为<mime-mapping>的子标签获取到,并将该标签中的子标签:
+    将web.xml跟标签下所有名为<mime-mapping>的子标签获取到,
+    并将该标签中的子标签:
     <extension>中的文本作为key
     <mime-type>中的文本作为value
     put到mimeMapping中

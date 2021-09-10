@@ -44,6 +44,9 @@ public class ParseXmlDemo {
                         属性有方法:
                             String getName();String getValue();
                             获取属性名;                获取value
+                    e.attribute("xxx").getValue();
+                    相当于
+                    e.attributeValue("xxx");
 
                     String getName()
                     获取元素名(标签名)
