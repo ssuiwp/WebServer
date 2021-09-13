@@ -15,9 +15,14 @@ public class DispatcherServlet {
 
     public void service(HttpResponse response, HttpRequest request){
         response.setProtocol(request.getProtocol());
-        String path = request.getUri();
+        response.addHeader("Server","WebServer");
+        String path = request.getRequestUri();
         if("/".equals(path)) {
             path = "/index.html";
+        }
+        if("/myweb/regUser".equals(path)){
+
+            return;
         }
         File file = new File("./webapps"+path);
         if(!(file.exists()&&file.isFile())){
@@ -28,7 +33,6 @@ public class DispatcherServlet {
             response.setStatusCode(200);
             response.setStatusReason("OK");
         }
-        response.addHeader("Server","WebServer");
         response.setEntity(file);
     }
 }

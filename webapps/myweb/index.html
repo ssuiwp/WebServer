@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>我的首页</title>
+    <script>
+        function keyup_submit(e) {
+            const evt = window.event || e;
+            if (evt.keyCode === 13) {
+                document.getElementById("but_baidu").click();
+            }
+        }
+        function searchByBaidu() {
+            const value = document.getElementById("search_baidu").value;
+            window.open("http://www.baidu.com/s?wd=" + value,"_self");
+        }
+
+        function keyup_submitBing(e) {
+            const evt = window.event || e;
+            if (evt.keyCode === 13) {
+                document.getElementById("but_Bing").click();
+
+                    }
+        }
+
+        function searchByBing() {
+            const value = document.getElementById("search_Bing").value;
+            window.open("https://cn.bing.com/search?q=" + value, "_self");
+        }
+
+    </script>
 </head>
 <body>
+<a href="./reg.html">去注册</a>
+<a href="./login.html">去登录</a>
 <center>
     <!--<center>:居中显示，凡是在该标签内的内容都会在页面上居中显示，该标签在html5️⃣的标准后就不再建议使用了
     <h>：标题，分别对应h1-h6，标题独立占一行
@@ -31,6 +59,7 @@
     <h4>我是标题</h4>
     <h5>我是标题</h5>
     <h6>我是标题</h6>-->
+    <br/><br/><br/><br/><br/> <br/>
     <img src="./logo.png/">
     <!--	<img>: 图片
                 属性src用于指定图片的路径。
@@ -41,38 +70,53 @@
                 所以如果页面图片上指定路径使用src="./logo.png"浏览器实际理解为
                 http://localhost:8088/myweb/logo.png
                 -->
-    <br>
-    <input type="text" size="32">
+    <br><br/><br/>
+    <input style="width:300px; height:40px;font-size:20px"
+           id="search_baidu" type="text" size="32"
+           onkeydown="keyup_submit(event);">
     <!--    <button onclick="">提交</button>-->
     <!--	<br/>-->
-    <input type="button" value="百度一下" onclick="alert('点你妹啊！')">
-    <br/>
-    <a href="https://www.taobao.com">去淘宝</a>
-    <a href="./reg.html">去注册</a>
-    <br/>
-    <table border="1" bgcolor="yellow">
+
+    <input id="but_baidu" style="height:45px;width:100px;font-size:20px" type="button" value="百度一下"
+           onclick="searchByBaidu()">
+    <br/><br/><br/>
+    <input style="width:300px; height:40px;font-size:20px"
+           id="search_Bing" type="text" size="32"
+           onkeydown="keyup_submitBing(event);">
+    <!--    <button onclick="">提交</button>-->
+    <!--	<br/>-->
+
+    <input id="but_Bing" style="height:45px;width:100px;font-size:20px" type="button" value="必应一下"
+           onclick="searchByBing()">
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <table>
         <tr>
-            <td>第一列</td>
-            <td align="center" colspan="2">第二列</td>
-            <!--			<td>第三列</td>-->
-            <!--			align：设置居中之类的样式，colspan，设置表格可以跨越的列数-->
+            <td><a href="https://www.taobao.com">去淘宝</a></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+            <td><a href="classTable.html">课程表</a></td>
         </tr>
-        <tr align="center">
-            <td rowspan="2">第一列</td>
-            <!--			rowspan可以设置表格横跨的行数
-                            column纵列，，row行，排   rows一行，一排
-                            -->
-            <td>第二列</td>
-            <td>第三列</td>
-        </tr>
-        <tr>
-            <!--			<td>第一列</td>-->
-            <td>第二列</td>
-            <td>第三列</td>
-        </tr>
-        <br/>
-        <a href="classTable.html">课程表</a>
     </table>
+    <!--    <table border="1" bgcolor="yellow">-->
+    <!--        <tr>-->
+    <!--            <td>第一列</td>-->
+    <!--            <td align="center" colspan="2">第二列</td>-->
+    <!--            &lt;!&ndash;			<td>第三列</td>&ndash;&gt;-->
+    <!--            &lt;!&ndash;			align：设置居中之类的样式，colspan，设置表格可以跨越的列数&ndash;&gt;-->
+    <!--        </tr>-->
+    <!--        <tr align="center">-->
+    <!--            <td rowspan="2">第一列</td>-->
+    <!--            &lt;!&ndash;			rowspan可以设置表格横跨的行数-->
+    <!--                            column纵列，，row行，排   rows一行，一排-->
+    <!--                            &ndash;&gt;-->
+    <!--            <td>第二列</td>-->
+    <!--            <td>第三列</td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            &lt;!&ndash;			<td>第一列</td>&ndash;&gt;-->
+    <!--            <td>第二列</td>-->
+    <!--            <td>第三列</td>-->
+    <!--        </tr>-->
+    <!--    </table>-->
 </center>
 </body>
 </html>
